@@ -1,8 +1,15 @@
-// Dependencias
+/*
+    Description: Testing REST API using Node.js
+    Author: André Luferat - www.luferat.net
+    License: MIT License
+*/
+
+// Dependências
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
+var favicon = require('serve-favicon');
 
 // Porta HTTP local
 var httpPort = 8888;
@@ -13,6 +20,10 @@ var database = 'users.json';
 // Inicializa Express
 var app = express();
 
+// Favicon
+app.use(favicon(path.join(__dirname, './favicon.png')));
+
+// Index.html
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
