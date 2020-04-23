@@ -2,12 +2,12 @@
 
 API REST fake para teste de aplicativos CRUD que consomem APIs.
 
-- [Instalando](#instalando)
-- [Exemplos](#exemplos)
-- - [post()](#post)
-- - [get()](#get)
-- - [put()](#put)
-- - [delete()](#delete)
+* [Instalando](#instalando)
+* [Exemplos](#exemplos)
+    * [post()](#post)
+    * [get()](#get)
+    * [put()](#put)
+    * [delete()](#delete)
 
 ## Instalando
 
