@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var path = require('path');
 
 // Porta HTTP local
 var httpPort = 8888;
@@ -11,6 +12,10 @@ var database = 'users.json';
 
 // Inicializa Express
 var app = express();
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './index.html'));
+});
 
 // Inicializa Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
