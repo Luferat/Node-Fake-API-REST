@@ -40,7 +40,7 @@ Use o método post() para inserir novos registros.
 
 #### Requisição
 
-``` http://localhost:9090/api?name=Joca da Silva&email=joca@silva.com&status=1 ```
+``` http://localhost:8888/api?name=Joca da Silva&email=joca@silva.com&status=1 ```
 
 #### Resposta bem sucedida
 
@@ -67,13 +67,13 @@ Use o método post() para inserir novos registros.
  
  Para listar todos os registros:
  
-`http://localhost:9090/api`
+`http://localhost:8888/api`
 ou
-`http://localhost:9090/api?id=0`
+`http://localhost:8888/api?id=0`
 
 Para listar um registro específico, por exemplo, o registro com `id = 5`:
 
- `http://localhost:9090/api?id=5`
+ `http://localhost:8888/api?id=5`
  
  #### Resposta bem sucedida
  Caso não encontre o(s) registro(s):
@@ -116,7 +116,7 @@ Se encontrar o(s) registro(s):
 ### put()
 Para inserir ou atualizar um registro existente.
 #### Requisição
-`http://localhost:9090/api?id=1&name=Joca da Silva&email=joca@silva.com&status=0`
+`http://localhost:8888/api?id=1&name=Joca da Silva&email=joca@silva.com&status=0`
 #### Resposta bem sucedida
 
 ```
@@ -138,7 +138,7 @@ Para inserir ou atualizar um registro existente.
 ### delete()
 Para remover um registro.
 #### Requisição
-`http://localhost:9090/api?id=1`
+`http://localhost:8888/api?id=1`
 #### Resposta bem sucedida
 
 ```

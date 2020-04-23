@@ -3,6 +3,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 
+// Porta HTTP local
+var httpPort = 8888;
+
 // Base de dados
 var database = 'users.json';
 
@@ -23,16 +26,16 @@ app.use((req, res, next) => {
     next();
 });
 
-// Inicia servidor HTTP na porta 9090
-app.listen(9090, () => { console.log('Servidor Web rodando na porta 9090') });
+// Inicia servidor HTTP na porta 8888
+app.listen(httpPort, () => { console.log('Servidor Web rodando na porta 8888') });
 
 // Método get()
 /*
   Exemplos:
   
-    http://localhost:9090/api --> Obtém todos os cadastros
-    http://localhost:9090/api?id=0 --> Obtém todos os cadastros
-    http://localhost:9090/api?id=2 --> Obtém o cadastro com id = 2
+    http://localhost:8888/api --> Obtém todos os cadastros
+    http://localhost:8888/api?id=0 --> Obtém todos os cadastros
+    http://localhost:8888/api?id=2 --> Obtém o cadastro com id = 2
 */
 app.get('/api', (req, res) => {
 
@@ -91,7 +94,7 @@ app.get('/api', (req, res) => {
 /*
   Exemplos:
 
-    http://localhost:9090/api?name=Joca da Silva&email=joca@silva.com&status=1
+    http://localhost:8888/api?name=Joca da Silva&email=joca@silva.com&status=1
         Adiciona:
             {
                 "name" : "Joca da Silva",
@@ -148,7 +151,7 @@ app.post('/api', (req, res) => {
 /*
     Exemplos:
     
-        http://localhost:9090/api?id=1&name=Joca da Silva&email=joca@silva.com&status=1
+        http://localhost:8888/api?id=1&name=Joca da Silva&email=joca@silva.com&status=1
             Atualiza o registro com id = 1
 */
 app.put('/api', (req, res) => {
@@ -181,7 +184,7 @@ app.put('/api', (req, res) => {
 /*
     Exemplo:
 
-        http://localhost:9090/api?id=1
+        http://localhost:8888/api?id=1
             Apaga o registro com id = 1
 */
 app.delete('/api', (req, res) => {
