@@ -2,6 +2,11 @@
 
 API REST fake para teste de aplicativos CRUD que consomem APIs.
 
+- [post()](#post)
+- [get()](#get)
+- [put()](#put)
+- [delete()](#delete)
+
 ## Instalando
 
 1. Verifique se o Node.js e o NPM estão instalados;
