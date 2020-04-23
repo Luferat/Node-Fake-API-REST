@@ -8,6 +8,7 @@ API REST fake para teste de aplicativos CRUD que consomem APIs.
     * [get()](#get)
     * [put()](#put)
     * [delete()](#delete)
+* [Testes](#testes)
 
 ## Instalando
 
@@ -156,3 +157,6 @@ Para remover um registro.
 } 
 ```
 > ERROR_MESSAGE varia conforme o erro obtido.
+
+## Testes
+Use o [Postman](https://www.postman.com/downloads/) para testar o funcionamento da aplicação.
