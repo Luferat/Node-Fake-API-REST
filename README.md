@@ -34,6 +34,9 @@ A API suporta registros com o seguintes dados:
 - `name : [String]`
 - `email : [String]`
 - `status : [Integer]`
+- `date: [String]`
+
+> Os valores das chaves 'id' e 'date' são geradas automaticamente.
 
 ### post()
 
@@ -92,13 +95,15 @@ Se encontrar o(s) registro(s):
             "name": "Setembrino Trocatapas",
             "email": "set@brino.com",
             "status": "1",
-            "id": 1
+            "id": 1,
+            "date": "2020-04-23T23:45:02.832Z"
         },
         {
             "name": "Dilermano",
             "email": "diler@mano.com",
             "status": "1",
-            "id": 2
+            "id": 2,
+            "date": "2020-04-23T23:45:36.528Z"
         },
         ...
     ]

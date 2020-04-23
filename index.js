@@ -117,6 +117,7 @@ app.get('/api', (req, res) => {
                 "email" : "joca@silva.com",
                 "status" : 1,
                 "id" : #  <<< Total de registros + 1 
+                "date" : # <<< Data do sistema
             }
 */
 app.post('/api', (req, res) => {
@@ -137,6 +138,11 @@ app.post('/api', (req, res) => {
 
             // Cria o novo id com base no número de registros
             req.query.id = obj.users.length + 1;
+
+            // Data atual
+            //var today = new Date();
+            //req.query.date = formatDate(today);
+            req.query.date = new Date();
 
             // Inclui novo registro
             obj.users.push(req.query);
@@ -178,10 +184,14 @@ app.put('/api', (req, res) => {
         } else {
             var obj = JSON.parse(data);
 
+            // Data atual
+            var today = new Date();
+
             // Observe que os campos correspondem ao database
             obj.users[(req.query.id - 1)].name = req.query.name;
             obj.users[(req.query.id - 1)].email = req.query.email;
             obj.users[(req.query.id - 1)].status = req.query.status;
+            obj.users[(req.query.id - 1)].date = new Date();
 
             fs.writeFile(database, JSON.stringify(obj), (err) => {
                 if (err) {
@@ -225,3 +235,36 @@ app.delete('/api', (req, res) => {
         }
     });
 });
+
+
+// Formata a data atual para YYYY-MM-DD HH:II:SS
+var formatDate = (date) => {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = '' + d.getFullYear(),
+        hour = '' + d.getHours(),
+        min = '' + d.getMinutes(),
+        sec = '' + d.getSeconds();
+
+    if (month.length < 2) {
+        month = '0' + month;
+    }
+    if (day.length < 2) {
+        day = '0' + day;
+    }
+    if (hour.length < 2) {
+        hour = '0' + hour;
+    }
+    if (min.length < 2) {
+        min = '0' + min;
+    }
+    if (sec.length < 2) {
+        sec = '0' + sec;
+    }
+
+    var datePart = [year, month, day].join('-');
+    var timePart = [hour, min, sec].join(':');
+
+    return [datePart, timePart].join(' ');
+}
