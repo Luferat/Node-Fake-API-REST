@@ -1,0 +1,150 @@
+# Fake API REST em Node.js
+
+API REST fake para teste de aplicativos CRUD que consomem APIs.
+
+## Instalando
+
+1. Verifique se o Node.js e o NPM estão instalados;
+2. Acesse o diretório onde o repositório foi clonado;
+3. Comande:
+
+    ```sh 
+    npm install --save
+    ```
+4. Execute:
+ 
+    ```sh
+    node index.js
+    ```
+
+## Exemplos
+
+A API suporta registros com o seguintes dados:
+
+- `id : [Integer]`
+- `name : [String]`
+- `email : [String]`
+- `status : [Integer]`
+
+### post()
+
+Use o método post() para inserir novos registros.
+
+#### Requisição
+
+``` http://localhost:9090/api?name=Joca da Silva&email=joca@silva.com&status=1 ```
+
+#### Resposta bem sucedida
+
+```
+{
+    "status": "sucess",
+    "result": "Record successfully added"
+} 
+```
+#### Resposta de falha
+
+```
+{
+    "status": "fail",
+    "result": "ERROR_MESSAGE"
+} 
+```
+> ERROR_MESSAGE varia conforme o erro obtido.
+ 
+### get()
+ Use o método get() para listar os registros.
+ 
+ #### Requisição
+ 
+ Para listar todos os registros:
+ 
+`http://localhost:9090/api`
+ou
+`http://localhost:9090/api?id=0`
+
+Para listar um registro específico, por exemplo, o registro com `id = 5`:
+
+ `http://localhost:9090/api?id=5`
+ 
+ #### Resposta bem sucedida
+ Caso não encontre o(s) registro(s):
+```
+{
+   "result": "No records found"
+} 
+``` 
+Se encontrar o(s) registro(s):
+```
+{
+    "status": "sucess",
+    "result": [
+        {
+            "name": "Setembrino Trocatapas",
+            "email": "set@brino.com",
+            "status": "1",
+            "id": 1
+        },
+        {
+            "name": "Dilermano",
+            "email": "diler@mano.com",
+            "status": "1",
+            "id": 2
+        },
+        ...
+    ]
+}
+```
+#### Resposta de falha
+
+```
+{
+    "status": "fail",
+    "result": "ERROR_MESSAGE"
+} 
+```
+> ERROR_MESSAGE varia conforme o erro obtido.
+
+### put()
+Para inserir ou atualizar um registro existente.
+#### Requisição
+`http://localhost:9090/api?id=1&name=Joca da Silva&email=joca@silva.com&status=0`
+#### Resposta bem sucedida
+
+```
+{
+    "status": "sucess",
+    "result": "Record successfully edited"
+}
+```
+#### Resposta de falha
+
+```
+{
+    "status": "fail",
+    "result": "ERROR_MESSAGE"
+} 
+```
+> ERROR_MESSAGE varia conforme o erro obtido.
+
+### delete()
+Para remover um registro.
+#### Requisição
+`http://localhost:9090/api?id=1`
+#### Resposta bem sucedida
+
+```
+{
+    "status": "sucess",
+    "result": "Record deleted successfully"
+}
+```
+#### Resposta de falha
+
+```
+{
+    "status": "fail",
+    "result": "ERROR_MESSAGE"
+} 
+```
+> ERROR_MESSAGE varia conforme o erro obtido.
