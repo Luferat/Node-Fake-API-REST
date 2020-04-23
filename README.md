@@ -7,7 +7,7 @@ API REST fake para teste de aplicativos CRUD que consomem APIs.
 1. Verifique se o Node.js e o NPM estão instalados;
 2. Clone o repositório;
 3. Acesse o diretório onde o repositório foi clonado;
-4. Comande:
+4. Para rodar o serviço, comande:
 
     ```sh 
     npm install --save
