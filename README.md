@@ -34,7 +34,7 @@ A API suporta registros com o seguintes dados:
 - `name : [String]`
 - `email : [String]`
 - `status : [Integer]`
-- `date: [String]`
+- `date: [Date]`
 
 > Os valores das chaves 'id' e 'date' são geradas automaticamente.
 
