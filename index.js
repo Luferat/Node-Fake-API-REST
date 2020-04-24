@@ -5,20 +5,20 @@
 */
 
 // Dependências
-var express = require('express');
-var bodyParser = require('body-parser');
-var fs = require('fs');
-var path = require('path');
-var favicon = require('serve-favicon');
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+const path = require('path');
+const favicon = require('serve-favicon');
 
 // Porta HTTP local
-var httpPort = 8888;
+const httpPort = 8888;
 
 // Base de dados
-var database = 'users.json';
+const database = 'users.json';
 
 // Inicializa Express
-var app = express();
+const app = express();
 
 // Favicon
 app.use(favicon(path.join(__dirname, './favicon.png')));
@@ -44,67 +44,6 @@ app.use((req, res, next) => {
 
 // Inicia servidor HTTP na porta 8888
 app.listen(httpPort, () => { console.log('Servidor Web rodando na porta 8888') });
-
-// Método get()
-/*
-  Exemplos:
-  
-    http://localhost:8888/api --> Obtém todos os cadastros
-    http://localhost:8888/api?id=0 --> Obtém todos os cadastros
-    http://localhost:8888/api?id=2 --> Obtém o cadastro com id = 2
-*/
-app.get('/api', (req, res) => {
-
-    // Carrega database em JSON
-    fs.readFile(database, 'utf8', (err, data) => {
-
-        // Se database não existe
-        if (err) {
-            var response = { status: 'fail', result: err };
-            res.json(response);
-
-            // Se database existe
-        } else {
-
-            // Formata em JSON
-            var obj = JSON.parse(data);
-
-            // Resultado padrão
-            var result = 'No records found';
-
-            // Obtém id da requisição
-            var data_id = req.query.id;
-
-            // Se não informou um id ou id = 0
-            if (data_id == undefined || data_id == 0) {
-
-                // Retorna todos os registros
-                result = obj.users;
-
-                // Se informou um id
-            } else {
-
-                // Pesquisa o id nos registros
-                obj.users.forEach((user) => {
-
-                    if (user != null) {
-
-                        // Se encontrou o id, retorna o registro
-                        if (user.id == data_id) {
-                            result = user;
-                        }
-                    }
-                });
-            }
-
-            // Formata response
-            var response = { status: 'sucess', result: result };
-
-            // Envia response
-            res.json(response);
-        }
-    });
-});
 
 // Método post()
 /*
@@ -165,6 +104,67 @@ app.post('/api', (req, res) => {
                     res.json(response);
                 }
             });
+        }
+    });
+});
+
+// Método get()
+/*
+  Exemplos:
+  
+    http://localhost:8888/api --> Obtém todos os cadastros
+    http://localhost:8888/api?id=0 --> Obtém todos os cadastros
+    http://localhost:8888/api?id=2 --> Obtém o cadastro com id = 2
+*/
+app.get('/api', (req, res) => {
+
+    // Carrega database em JSON
+    fs.readFile(database, 'utf8', (err, data) => {
+
+        // Se database não existe
+        if (err) {
+            var response = { status: 'fail', result: err };
+            res.json(response);
+
+            // Se database existe
+        } else {
+
+            // Formata em JSON
+            var obj = JSON.parse(data);
+
+            // Resultado padrão
+            var result = 'No records found';
+
+            // Obtém id da requisição
+            var data_id = req.query.id;
+
+            // Se não informou um id ou id = 0
+            if (data_id == undefined || data_id == 0) {
+
+                // Retorna todos os registros
+                result = obj.users;
+
+                // Se informou um id
+            } else {
+
+                // Pesquisa o id nos registros
+                obj.users.forEach((user) => {
+
+                    if (user != null) {
+
+                        // Se encontrou o id, retorna o registro
+                        if (user.id == data_id) {
+                            result = user;
+                        }
+                    }
+                });
+            }
+
+            // Formata response
+            var response = { status: 'sucess', result: result };
+
+            // Envia response
+            res.json(response);
         }
     });
 });
@@ -235,36 +235,3 @@ app.delete('/api', (req, res) => {
         }
     });
 });
-
-
-// Formata a data atual para YYYY-MM-DD HH:II:SS
-var formatDate = (date) => {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = '' + d.getFullYear(),
-        hour = '' + d.getHours(),
-        min = '' + d.getMinutes(),
-        sec = '' + d.getSeconds();
-
-    if (month.length < 2) {
-        month = '0' + month;
-    }
-    if (day.length < 2) {
-        day = '0' + day;
-    }
-    if (hour.length < 2) {
-        hour = '0' + hour;
-    }
-    if (min.length < 2) {
-        min = '0' + min;
-    }
-    if (sec.length < 2) {
-        sec = '0' + sec;
-    }
-
-    var datePart = [year, month, day].join('-');
-    var timePart = [hour, min, sec].join(':');
-
-    return [datePart, timePart].join(' ');
-}
