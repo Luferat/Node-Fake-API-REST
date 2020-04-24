@@ -43,7 +43,7 @@ app.use((req, res, next) => {
 });
 
 // Inicia servidor HTTP na porta 8888
-app.listen(httpPort, () => { console.log('Servidor Web rodando na porta 8888') });
+app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPort}`) });
 
 // Método post()
 /*
