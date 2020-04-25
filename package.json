@@ -3,16 +3,16 @@
     "version": "1.0.0",
     "description": "Testing REST API using Node.js",
     "main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Luferat/Node-Fake-API-REST"
-	},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Luferat/Node-Fake-API-REST"
+    },
     "scripts": {
         "start": "node index.js"
     },
     "author": "André Luferat - www.luferat.net",
     "license": "MIT",
-	"homepage": "https://github.com/Luferat/Node-Fake-API-REST/",
+    "homepage": "https://github.com/Luferat/Node-Fake-API-REST/",
     "dependencies": {
         "body-parser": "^1.18.3",
         "express": "^4.16.4",
