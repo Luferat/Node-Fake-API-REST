@@ -49,15 +49,21 @@ app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPo
 /*
   Exemplos:
 
-    http://localhost:8888/api?name=Joca da Silva&email=joca@silva.com&status=1
-        Adiciona:
-            {
-                "name" : "Joca da Silva",
-                "email" : "joca@silva.com",
-                "status" : 1,
-                "id" : #  <<< Total de registros + 1 
-                "date" : # <<< Data do sistema
-            }
+    http://localhost:8888/api
+        ?name=Joca da Silva
+        &email=joca@silva.com
+        &avatar=photo.jpg
+        &status=1
+
+    Adiciona:
+        {
+            "name" : "Joca da Silva",
+            "email" : "joca@silva.com",
+            "avatar" : "photo.jpg",
+            "status" : 1,
+            "id" : #,  <<< Total de registros + 1
+            "date" : # <<< Data do sistema
+        }
 */
 app.post('/api', (req, res) => {
 
@@ -173,8 +179,14 @@ app.get('/api', (req, res) => {
 /*
     Exemplos:
     
-        http://localhost:8888/api?id=1&name=Joca da Silva&email=joca@silva.com&status=1
-            Atualiza o registro com id = 1
+        http://localhost:8888/api
+            ?id=1
+            &name=Joca da Silva
+            &email=joca@silva.com
+            &avatar=photo.jpg
+            &status=1
+            
+        Atualiza o registro com id = 1
 */
 app.put('/api', (req, res) => {
     fs.readFile(database, 'utf8', (err, data) => {
@@ -190,6 +202,7 @@ app.put('/api', (req, res) => {
             // Observe que os campos correspondem ao database
             obj.users[(req.query.id - 1)].name = req.query.name;
             obj.users[(req.query.id - 1)].email = req.query.email;
+            obj.users[(req.query.id - 1)].avatar = req.query.avatar;
             obj.users[(req.query.id - 1)].status = req.query.status;
             obj.users[(req.query.id - 1)].date = new Date();
 
@@ -210,8 +223,10 @@ app.put('/api', (req, res) => {
 /*
     Exemplo:
 
-        http://localhost:8888/api?id=1
-            Apaga o registro com id = 1
+        http://localhost:8888/api
+            ?id=1
+
+        Apaga o registro com id = 1
 */
 app.delete('/api', (req, res) => {
     fs.readFile(database, 'utf8', (err, data) => {
