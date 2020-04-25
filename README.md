@@ -41,7 +41,7 @@ A API suporta registros com o seguintes dados:
 
 ### post()
 
-Use o método post() para inserir novos registros.
+Para inserir um novo registro.
 
 #### Requisição
 
@@ -72,7 +72,7 @@ http://localhost:8888/api
 > ERROR_MESSAGE varia conforme o erro obtido.
  
 ### get()
- Use o método get() para listar os registros.
+ Para listar os registros.
  
  #### Requisição
  
@@ -135,7 +135,7 @@ Se encontrar o(s) registro(s):
 > ERROR_MESSAGE varia conforme o erro obtido.
 
 ### put()
-Para inserir ou atualizar um registro existente.
+Para atualizar um registro existente.
 #### Requisição
 ```
 http://localhost:8888/api
@@ -163,7 +163,7 @@ http://localhost:8888/api
 > ERROR_MESSAGE varia conforme o erro obtido.
 
 ### delete()
-Para remover um registro.
+Para remover um registro existente.
 #### Requisição
 `http://localhost:8888/api?id=1`
 #### Resposta bem sucedida
