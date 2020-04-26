@@ -139,7 +139,7 @@ app.get('/api', (req, res) => {
             var obj = JSON.parse(data);
 
             // Resultado padrão
-            var result = 'No records found';
+            var result = 'No record found';
 
             // Obtém id da requisição
             var data_id = req.query.id;
@@ -147,7 +147,7 @@ app.get('/api', (req, res) => {
             // Se não informou um id ou id = 0
             if (data_id == undefined || data_id == 0) {
 
-                // Retorna todos os registros
+				// Retorna todos os registros
                 result = obj.users;
 
                 // Se informou um id
