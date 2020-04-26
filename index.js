@@ -100,11 +100,11 @@ app.post('/api', (req, res) => {
                     var response = { status: 'fail', result: err };
                     res.json(response);
 
-                    // Sucesso na gravação
+                    // successo na gravação
                 } else {
 
                     // Formata response
-                    var response = { status: 'sucess', result: 'Record successfully added' };
+                    var response = { status: 'success', result: 'Record successfully added' };
 
                     // Envia response
                     res.json(response);
@@ -167,7 +167,7 @@ app.get('/api', (req, res) => {
             }
 
             // Formata response
-            var response = { status: 'sucess', result: result };
+            var response = { status: 'success', result: result };
 
             // Envia response
             res.json(response);
@@ -211,7 +211,7 @@ app.put('/api', (req, res) => {
                     var response = { status: 'fail', result: err };
                     res.json(response);
                 } else {
-                    var response = { status: 'sucess', result: 'Record successfully edited' };
+                    var response = { status: 'success', result: 'Record successfully edited' };
                     res.json(response);
                 }
             });
@@ -243,7 +243,7 @@ app.delete('/api', (req, res) => {
                     var response = { status: 'fail', result: err };
                     res.json(response);
                 } else {
-                    var response = { status: 'sucess', result: 'Record deleted successfully' };
+                    var response = { status: 'success', result: 'Record deleted successfully' };
                     res.json(response);
                 }
             });
