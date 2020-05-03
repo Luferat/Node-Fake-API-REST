@@ -57,7 +57,7 @@ http://localhost:8888/api
 
 ```
 {
-    "status": "sucess",
+    "status": "success",
     "result": "Record successfully added"
 } 
 ```
@@ -102,7 +102,7 @@ http://localhost:8888/api?id=5
 Se encontrar o(s) registro(s):
 ```
 {
-    "status": "sucess",
+    "status": "success",
     "result": [
         {
             "name": "Setembrino Trocatapas",
@@ -148,7 +148,7 @@ http://localhost:8888/api
 #### Resposta bem sucedida
 ```
 {
-    "status": "sucess",
+    "status": "success",
     "result": "Record successfully edited"
 }
 ```
@@ -170,7 +170,7 @@ Para remover um registro existente.
 
 ```
 {
-    "status": "sucess",
+    "status": "success",
     "result": "Record deleted successfully"
 }
 ```
