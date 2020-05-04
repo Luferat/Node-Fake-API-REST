@@ -82,11 +82,17 @@
                 <li><a href="#post_response_ok">Resposta bem sucedida</a></li>
                 <li><a href="#post_response_fail">Resposta de falha</a></li>
             </ul>
-            <li><a href="#get">get()</a></li>
+            <li><a href="#get">get() (Todos os registros)</a></li>
             <ul>
                 <li><a href="#get_request">Requisição</a></li>
                 <li><a href="#get_response_ok">Resposta bem sucedida</a></li>
                 <li><a href="#get_response_fail">Resposta de falha</a></li>
+            </ul>
+			<li><a href="#get1">get() (Um registro específico)</a></li>
+            <ul>
+                <li><a href="#get_request1">Requisição</a></li>
+                <li><a href="#get_response_ok1">Resposta bem sucedida</a></li>
+                <li><a href="#get_response_fail1">Resposta de falha</a></li>
             </ul>
             <li><a href="#put">put()</a></li>
             <ul>
@@ -147,18 +153,18 @@
 }</pre>
     <blockquote><code>ERROR_MESSAGE</code> varia conforme o erro obtido.</blockquote>
 
-    <h3 id="get">get() <a href="#topo">&uarr;</a></h3>
+    <h3 id="get">get() (Todos os registros) <a href="#topo">&uarr;</a></h3>
     <p>Para listar os registros.</p>
-    <h4 id="get_request">Requisição <a href="#topo">&uarr;</a></h4>
-    <p>Para listar todos os registros:</p>
+    
+	<h4 id="get_request">Requisição <a href="#topo">&uarr;</a></h4>
     <pre>http://localhost:8888/api</pre> ou
     <pre>http://localhost:8888/api?id=0</pre>
-    <p>Para listar um registro específico, por exemplo, o registro com `id = 5`:</p>
-    <pre>http://localhost:8888/api?id=5</pre>
-    <h4 id="get_response_ok">Resposta bem sucedida <a href="#topo">&uarr;</a></h4>
-    <p>Caso não encontre o(s) registro(s):</p>
+	
+	<h4 id="get_response_ok">Resposta bem sucedida <a href="#topo">&uarr;</a></h4>
+    <p>Caso não encontre os registros:</p>
     <pre>{
-	"result": "No records found"
+	"status": "success",
+	"result": "No record found"
 }</pre>
     <p>Se encontrar o(s) registro(s):</p>
     <pre>{
@@ -184,6 +190,38 @@
 	]
 }</pre>
     <h4 id="get_response_fail">Resposta de falha <a href="#topo">&uarr;</a></h4>
+    <pre>{
+	"status": "fail",
+	"result": "ERROR_MESSAGE"
+} </pre>
+    <blockquote><code>ERROR_MESSAGE</code> varia conforme o erro obtido.</blockquote>
+		
+	<h3 id="get1">get() (Um registro específico) <a href="#topo">&uarr;</a></h3>
+	<p>Para listar um registro específico:</p>
+	<h4 id="get_request1">Requisição <a href="#topo">&uarr;</a></h4>
+    <pre>http://localhost:8888/api?id=5</pre>
+	
+	<h4 id="get_response_ok1">Resposta bem sucedida <a href="#topo">&uarr;</a></h4>
+    <p>Caso não encontre o registro:</p>
+    <pre>{
+	"status": "success",
+	"result": "No record found"
+}</pre>
+    <p>Se encontrar o registro:</p>
+    <pre>{
+	"status": "success",
+	"result": [
+		{
+			"name": "Marineuza Siriliano",
+			"email": "mari@neuza.com",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+			"status": "1",
+			"id": 5,
+			"date": "2020-03-18T13:15:22.832Z"
+		}
+	]
+}</pre>
+    <h4 id="get_response_fail1">Resposta de falha <a href="#topo">&uarr;</a></h4>
     <pre>{
 	"status": "fail",
 	"result": "ERROR_MESSAGE"
