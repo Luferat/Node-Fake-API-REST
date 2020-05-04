@@ -96,7 +96,8 @@ http://localhost:8888/api?id=5
  Caso não encontre o(s) registro(s):
 ```
 {
-   "result": "No records found"
+   "status": "success",
+   "result": "No record found"
 } 
 ``` 
 Se encontrar o(s) registro(s):
