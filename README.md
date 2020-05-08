@@ -38,6 +38,7 @@ A API suporta registros com o seguintes dados:
 - `date: [Date]`
 
 > Os valores das chaves 'id' e 'date' são geradas automaticamente na inserção (POST).
+
 > Os valores da chave 'date' é gerado automaticamente na atualização (PUT).
 
 ### post()
