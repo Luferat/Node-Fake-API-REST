@@ -37,7 +37,8 @@ A API suporta registros com o seguintes dados:
 - `status : [Integer]`
 - `date: [Date]`
 
-> Os valores das chaves 'id' e 'date' são geradas automaticamente.
+> Os valores das chaves 'id' e 'date' são geradas automaticamente na inserção (POST).
+> Os valores da chave 'date' é gerado automaticamente na atualização (PUT).
 
 ### post()
 
@@ -52,6 +53,8 @@ http://localhost:8888/api
     &avatar=https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg
     &status=1
 ```
+
+> Os valores das chaves 'id' e 'date' são geradas automaticamente na inserção (POST).
 
 #### Resposta bem sucedida
 
@@ -146,6 +149,9 @@ http://localhost:8888/api
     &avatar=https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg
     &status=0
 ```
+
+> Os valores da chave 'date' é gerado automaticamente na atualização (PUT).
+
 #### Resposta bem sucedida
 ```
 {
