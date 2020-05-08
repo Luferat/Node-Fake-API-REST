@@ -39,7 +39,7 @@ A API suporta registros com o seguintes dados:
 
 > Os valores das chaves 'id' e 'date' são geradas automaticamente na inserção (POST).
 
-> Os valores da chave 'date' é gerado automaticamente na atualização (PUT).
+> O valor da chave 'date' é gerado automaticamente na atualização (PUT).
 
 ### post()
 
@@ -151,7 +151,7 @@ http://localhost:8888/api
     &status=0
 ```
 
-> Os valores da chave 'date' é gerado automaticamente na atualização (PUT).
+> O valor da chave 'date' é gerado automaticamente na atualização (PUT).
 
 #### Resposta bem sucedida
 ```
