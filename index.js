@@ -78,8 +78,6 @@ app.post('/api', (req, res) => {
             // Se database existe
         } else {
 			
-			console.log(req);
-
             // Obtém todos os registros  
             var obj = JSON.parse(data);
 
