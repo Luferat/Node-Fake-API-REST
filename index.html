@@ -142,11 +142,15 @@
     <h3 id="post">post() <a href="#topo">&uarr;</a></h3>
     <p>Para inserir um novo registro.</p>
     <h4 id="post_request">Requisição <a href="#topo">&uarr;</a></h4>
-    <pre>http://localhost:8888/api
-	?name=Joca da Silva
-	&email=joca@silva.com
-	&avatar=https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg
-	&status=1</pre>
+	<h5>URL:</h5>
+    <pre>http://localhost:8888/api</pre>
+	<h5>Body (JSON):</h5>
+	<pre>{
+	"name" : "Joca da Silva",
+	"email" : "joca@silva.com",
+	"avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
+	"status" : 1
+}</pre>
 	<blockquote>
 		<span class="red">*</span> Os valores das chaves 'id' e 'date' são gerados automaticamente na inserção.
 	</blockquote>
@@ -239,22 +243,26 @@
 
     <h3 id="put">put() <a href="#topo">&uarr;</a></h3>
     <p>Para atualizar um registro existente.</p>
-    <h3 id="put_request">Requisição <a href="#topo">&uarr;</a></h3>
-    <pre>http://localhost:8888/api
-	?id=1
-	&name=Joca da Silva
-	&email=joca@silva.com
-	&avatar=https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg
-	&status=0</pre>
+    <h4 id="put_request">Requisição <a href="#topo">&uarr;</a></h4>
+	<h5>URL:</h5>
+    <pre>http://localhost:8888/api</pre>
+	<h5>Body (JSON):</h5>
+	<pre>{
+	"id" : 1,
+	"name" : "Joca da Silva",
+	"email" : "joca@silva.com",
+	"avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
+	"status" : 0
+}</pre>
 	<blockquote>
 		<span class="red">*</span> O valor da chave 'date' é gerado automaticamente na atualização.
 	</blockquote>
-    <h3 id="put_response_ok">Resposta bem sucedida <a href="#topo">&uarr;</a></h3>
+    <h4 id="put_response_ok">Resposta bem sucedida <a href="#topo">&uarr;</a></h4>
     <pre>{
 	"status": "success",
 	"result": "Record successfully edited"
 }</pre>
-    <h3 id="put_response_fail">Resposta de falha <a href="#topo">&uarr;</a></h3>
+    <h4 id="put_response_fail">Resposta de falha <a href="#topo">&uarr;</a></h4>
     <pre>{
 	"status": "fail",
 	"result": "ERROR_MESSAGE"

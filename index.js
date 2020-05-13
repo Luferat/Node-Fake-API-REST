@@ -77,12 +77,14 @@ app.post('/api', (req, res) => {
 
             // Se database existe
         } else {
+			
+			console.log(req);
 
             // Obtém todos os registros  
             var obj = JSON.parse(data);
 
             // Cria o novo id com base no número de registros
-            req.query.id = obj.users.length + 1;
+            req.body.id = obj.users.length + 1;
 
             // Data atual
             //var today = new Date();
@@ -90,7 +92,8 @@ app.post('/api', (req, res) => {
             req.query.date = new Date();
 
             // Inclui novo registro
-            obj.users.push(req.query);
+            // obj.users.push(req.query);
+			obj.users.push(req.body);
 
             // Grava database atualizado 
             fs.writeFile(database, JSON.stringify(obj), (err) => {
@@ -200,11 +203,11 @@ app.put('/api', (req, res) => {
             var today = new Date();
 
             // Observe que os campos correspondem ao database
-            obj.users[(req.query.id - 1)].name = req.query.name;
-            obj.users[(req.query.id - 1)].email = req.query.email;
-            obj.users[(req.query.id - 1)].avatar = req.query.avatar;
-            obj.users[(req.query.id - 1)].status = req.query.status;
-            obj.users[(req.query.id - 1)].date = new Date();
+            obj.users[(req.body.id - 1)].name = req.body.name;
+            obj.users[(req.body.id - 1)].email = req.body.email;
+            obj.users[(req.body.id - 1)].avatar = req.body.avatar;
+            obj.users[(req.body.id - 1)].status = req.body.status;
+            obj.users[(req.body.id - 1)].date = new Date();
 
             fs.writeFile(database, JSON.stringify(obj), (err) => {
                 if (err) {
