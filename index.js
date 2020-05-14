@@ -47,22 +47,25 @@ app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPo
 
 // Método post()
 /*
-  Exemplos:
+  Exemplo: adicionar no banco de dados
 
-    http://localhost:8888/api
-        ?name=Joca da Silva
-        &email=joca@silva.com
-        &avatar=photo.jpg
-        &status=1
+    URL da Requisição: http://localhost:8888/api
+    Body da Requisição (JSON):
+	{
+		"name" : "Joca da Silva",
+		"email" : "joca@silva.com",
+		"avatar" : "photo.jpg",
+		"status" : "1"
+	}
 
-    Adiciona:
+    Adicionará o registro:
         {
             "name" : "Joca da Silva",
             "email" : "joca@silva.com",
             "avatar" : "photo.jpg",
             "status" : 1,
             "id" : #,  <<< Total de registros + 1
-            "date" : # <<< Data do sistema
+            "date" : # <<< Data do sistema no momento da inclusã
         }
 */
 app.post('/api', (req, res) => {
@@ -119,9 +122,9 @@ app.post('/api', (req, res) => {
 /*
   Exemplos:
   
-    http://localhost:8888/api --> Obtém todos os cadastros
-    http://localhost:8888/api?id=0 --> Obtém todos os cadastros
-    http://localhost:8888/api?id=2 --> Obtém o cadastro com id = 2
+    URL da Requisição: http://localhost:8888/api --> Obtém todos os cadastros
+    URL da Requisição: http://localhost:8888/api?id=0 --> Obtém todos os cadastros
+    URL da Requisição: http://localhost:8888/api?id=2 --> Obtém o cadastro com id = 2
 */
 app.get('/api', (req, res) => {
 
@@ -178,16 +181,17 @@ app.get('/api', (req, res) => {
 
 // Método put()
 /*
-    Exemplos:
+    Exemplo: Atualiza o registro com id = 1
     
-        http://localhost:8888/api
-            ?id=1
-            &name=Joca da Silva
-            &email=joca@silva.com
-            &avatar=photo.jpg
-            &status=1
-            
-        Atualiza o registro com id = 1
+        URL da Requsição: http://localhost:8888/api
+	Body da Requisição:
+	}
+            "id" : 1,
+            "name" : "Joca da Silva",
+            "email" : "joca@silva.com",
+            "avatar" : "photo.jpg",
+            "status" : 1
+	}        
 */
 app.put('/api', (req, res) => {
     fs.readFile(database, 'utf8', (err, data) => {
@@ -222,12 +226,9 @@ app.put('/api', (req, res) => {
 
 // Método delete()
 /*
-    Exemplo:
+    Exemplo: Apaga o registro com id = 1
 
-        http://localhost:8888/api
-            ?id=1
-
-        Apaga o registro com id = 1
+        URL da Requisição: http://localhost:8888/api?id=1
 */
 app.delete('/api', (req, res) => {
     fs.readFile(database, 'utf8', (err, data) => {
