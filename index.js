@@ -12,7 +12,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 
 // Porta HTTP local
-const httpPort = 8888;
+const httpPort = process.env.PORT || 8888;
 
 // Base de dados
 const database = 'users.json';
