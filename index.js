@@ -65,7 +65,7 @@ app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPo
             "avatar" : "photo.jpg",
             "status" : 1,
             "id" : #,  <<< Total de registros + 1
-            "date" : # <<< Data do sistema no momento da inclusã
+            "date" : # <<< Data do sistema no momento da inclusão
         }
 */
 app.post('/api', (req, res) => {
