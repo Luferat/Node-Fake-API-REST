@@ -1,1 +1,69 @@
-{"users":[{"name":"Joca da Silva Souza","email":"joca@silva.com","avatar":"https://randomuser.me/api/portraits/lego/5.jpg","status":1,"id":1,"date":"2020-05-14T17:22:10.332Z"},{"name":"Setembrino TrocaTapas","email":"set@brino.com.br","avatar":"https://randomuser.me/api/portraits/lego/3.jpg","status":false,"id":2,"date":"2020-05-15T13:07:52.085Z"},{"name":"Emengarda Quadrada","email":"emen@quadrada.com.br","avatar":"https://randomuser.me/api/portraits/lego/1.jpg","status":true,"id":3,"date":"2020-05-15T13:25:33.156Z"},null,{"name":"Bob Esponja","email":"bob@esponja.com.br","avatar":"https://randomuser.me/api/portraits/lego/4.jpg","status":true,"id":5,"date":"2020-05-16T19:53:07.556Z"},{"name":"Super Mário","email":"super@mario.com","avatar":"https://randomuser.me/api/portraits/lego/6.jpg","status":1,"id":6},{"name":"Cabeça de Coco","email":"cabeca@coco.com.br","avatar":"https://randomuser.me/api/portraits/lego/7.jpg","status":1,"id":7,"date":"2020-05-14T18:09:25.638Z"},null]}
+{
+    "users": [
+        {
+            "name": "Joca da Silva Souza",
+            "email": "joca@silva.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/5.jpg",
+            "status": 1,
+            "id": 1,
+            "date": "2020-05-14T17:22:10.332Z"
+        },
+        {
+            "name": "Setembrino TrocaTapas",
+            "email": "set@brino.com.br",
+            "avatar": "https://randomuser.me/api/portraits/lego/3.jpg",
+            "status": false,
+            "id": 2,
+            "date": "2020-05-15T13:07:52.085Z"
+        },
+        {
+            "name": "Emengarda Quadrada",
+            "email": "emen@quadrada.com.br",
+            "avatar": "https://randomuser.me/api/portraits/lego/1.jpg",
+            "status": true,
+            "id": 3,
+            "date": "2020-05-15T13:25:33.156Z"
+        },
+        null,
+        {
+            "name": "Bob Esponja",
+            "email": "bob@esponja.com.br",
+            "avatar": "https://randomuser.me/api/portraits/lego/4.jpg",
+            "status": true,
+            "id": 5,
+            "date": "2020-05-16T19:53:07.556Z"
+        },
+        {
+            "name": "Super Mário",
+            "email": "super@mario.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/6.jpg",
+            "status": 1,
+            "id": 6
+        },
+        {
+            "name": "Cabeça de Coco",
+            "email": "cabeca@coco.com.br",
+            "avatar": "https://randomuser.me/api/portraits/lego/7.jpg",
+            "status": 1,
+            "id": 7,
+            "date": "2020-05-14T18:09:25.638Z"
+        },
+        null,
+        null,
+        {
+            "name": "André Luferat",
+            "email": "andre@luferat.net",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
+            "status": 1,
+            "id": 10
+        },
+        {
+            "name": "Lucas Almeida",
+            "email": "lucas@almeida.com",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/125.jpg",
+            "status": 0,
+            "id": 11,
+            "date": "2020-09-04T13:52:11.256Z"
+        }
+    ]
+}
