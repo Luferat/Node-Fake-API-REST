@@ -35,6 +35,7 @@ A API suporta registros com o seguintes dados:
 - `email : [String]`
 - `avatar: [String]`
 - `status : [Integer]`
+- `passwd : [String]`
 - `date: [Date]`
 
 > Os valores das chaves 'id' e 'date' são geradas automaticamente na inserção (POST).
@@ -56,7 +57,8 @@ http://localhost:8888/api
 	"name" : "Joca da Silva",
 	"email" : "joca@silva.com",
 	"avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
-	"status" : 1
+	"status" : 1,
+	"passwd" : "qwerty"
 }
 ```
 
@@ -119,6 +121,7 @@ Se encontrar o(s) registro(s):
             "email": "set@brino.com",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
             "status": "1",
+	    "passwd" : "qwerty",
             "id": 1,
             "date": "2020-04-23T23:45:02.832Z"
         },
@@ -127,6 +130,7 @@ Se encontrar o(s) registro(s):
             "email": "diler@mano.com",
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
             "status": "1",
+	    "passwd" : "qwerty",
             "id": 2,
             "date": "2020-04-23T23:45:36.528Z"
         },
@@ -158,7 +162,8 @@ http://localhost:8888/api
 	"name" : "Joca da Silva",
 	"email" : "joca@silva.com",
 	"avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
-	"status" : 0
+	"status" : 0,
+	"passwd" : "qwerty"
 }
 ```
 
@@ -205,3 +210,4 @@ Para remover um registro existente.
 
 ## Testes
 Use o [Postman](https://www.postman.com/downloads/) para testar o funcionamento da aplicação.
+
