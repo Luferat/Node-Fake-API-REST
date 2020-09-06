@@ -55,7 +55,8 @@ app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPo
 		"name" : "Joca da Silva",
 		"email" : "joca@silva.com",
 		"avatar" : "photo.jpg",
-		"status" : "1"
+        "status" : "1",
+        "passwd" : "qwerty"
 	}
 
     Adicionará o registro:
@@ -64,6 +65,7 @@ app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPo
             "email" : "joca@silva.com",
             "avatar" : "photo.jpg",
             "status" : 1,
+            "passwd" : "qwerty",
             "id" : #,  <<< Total de registros + 1
             "date" : # <<< Data do sistema no momento da inclusão
         }
@@ -90,7 +92,7 @@ app.post('/api', (req, res) => {
             // Data atual
             //var today = new Date();
             //req.query.date = formatDate(today);
-            req.query.date = new Date();
+            req.body.date = new Date();
 
             // Inclui novo registro
             // obj.users.push(req.query);
@@ -190,7 +192,8 @@ app.get('/api', (req, res) => {
             "name" : "Joca da Silva",
             "email" : "joca@silva.com",
             "avatar" : "photo.jpg",
-            "status" : 1
+            "status" : 1,
+            "passwd" : "qwerty"
 	}        
 */
 app.put('/api', (req, res) => {
@@ -209,6 +212,7 @@ app.put('/api', (req, res) => {
             obj.users[(req.body.id - 1)].email = req.body.email;
             obj.users[(req.body.id - 1)].avatar = req.body.avatar;
             obj.users[(req.body.id - 1)].status = req.body.status;
+            obj.users[(req.body.id - 1)].passwd = req.body.passwd;
             obj.users[(req.body.id - 1)].date = new Date();
 
             fs.writeFile(database, JSON.stringify(obj), (err) => {
