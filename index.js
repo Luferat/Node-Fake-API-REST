@@ -2,22 +2,23 @@
     Description: Testing REST API using Node.js
     Author: André Luferat - www.luferat.net
     License: MIT License
+    Support: read manual pages in "index.html"
 */
 
-// Dependências
+// Dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 const favicon = require('serve-favicon');
 
-// Porta HTTP local
+// Set HTTP port
 const httpPort = process.env.PORT || 8888;
 
-// Base de dados
+// Databse file
 const database = 'users.json';
 
-// Inicializa Express
+// Starts Express
 const app = express();
 
 // Favicon
@@ -28,11 +29,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
 
-// Inicializa Body Parser
+// Starts Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Formata cabeçalho HTTP
+// Format HTTP header
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
@@ -42,77 +43,50 @@ app.use((req, res, next) => {
     next();
 });
 
-// Inicia servidor HTTP na porta 8888
+// Starts the HTTP server on the specified port
 app.listen(httpPort, () => { console.log(`Servidor Web rodando na porta ${httpPort}`) });
 
-// Método post()
-/*
-  Exemplo: adicionar no banco de dados
-
-    URL da Requisição: http://localhost:8888/api
-    Body da Requisição (JSON):
-	{
-		"name" : "Joca da Silva",
-		"email" : "joca@silva.com",
-		"avatar" : "photo.jpg",
-        "status" : "1",
-        "passwd" : "qwerty"
-	}
-
-    Adicionará o registro:
-        {
-            "name" : "Joca da Silva",
-            "email" : "joca@silva.com",
-            "avatar" : "photo.jpg",
-            "status" : 1,
-            "passwd" : "qwerty",
-            "id" : #,  <<< Total de registros + 1
-            "date" : # <<< Data do sistema no momento da inclusão
-        }
-*/
+// post() method --> See "index.html" for help
 app.post('/api', (req, res) => {
 
-    // Carrega database em JSON
+    // Load database formatted as JSON
     fs.readFile(database, 'utf8', (err, data) => {
 
-        // Se database não existe
+        // If database does not exist
         if (err) {
             var response = { status: 'fail', result: err };
             res.json(response);
 
-            // Se database existe
+            // If database exists
         } else {
-			
-            // Obtém todos os registros  
+
+            // Get all records  
             var obj = JSON.parse(data);
 
-            // Cria o novo id com base no número de registros
+            // Creates the new id based on the number of records
             req.body.id = obj.users.length + 1;
 
-            // Data atual
-            //var today = new Date();
-            //req.query.date = formatDate(today);
+            // Current date
             req.body.date = new Date();
 
-            // Inclui novo registro
-            // obj.users.push(req.query);
-			obj.users.push(req.body);
+            // Includes new record
+            obj.users.push(req.body);
 
-            // Grava database atualizado 
+            // Records updated database 
             fs.writeFile(database, JSON.stringify(obj), (err) => {
 
-                // Erro na gravação
+                // Recording error?
                 if (err) {
                     var response = { status: 'fail', result: err };
                     res.json(response);
 
-                    // successo na gravação
+                    // Recording success?
                 } else {
 
-                    // Formata response
+                    // Format response
                     var response = { status: 'success', result: 'Record successfully added' };
 
-                    // Envia response
+                    // Send response
                     res.json(response);
                 }
             });
@@ -120,51 +94,44 @@ app.post('/api', (req, res) => {
     });
 });
 
-// Método get()
-/*
-  Exemplos:
-  
-    URL da Requisição: http://localhost:8888/api --> Obtém todos os cadastros
-    URL da Requisição: http://localhost:8888/api?id=0 --> Obtém todos os cadastros
-    URL da Requisição: http://localhost:8888/api?id=2 --> Obtém o cadastro com id = 2
-*/
+// get() method --> See "index.html" for help
 app.get('/api', (req, res) => {
 
-    // Carrega database em JSON
+    // Load database formatted as JSON
     fs.readFile(database, 'utf8', (err, data) => {
 
-        // Se database não existe
+        // If database does not exist
         if (err) {
             var response = { status: 'fail', result: err };
             res.json(response);
 
-            // Se database existe
+            // If database exists
         } else {
 
-            // Formata em JSON
+            // Formats data in JSON
             var obj = JSON.parse(data);
 
-            // Resultado padrão
+            // Standard result
             var result = 'No record found';
 
-            // Obtém id da requisição
+            // Get request id
             var data_id = req.query.id;
 
-            // Se não informou um id ou id = 0
+            // If you did not enter an id or id = 0
             if (data_id == undefined || data_id == 0) {
 
-				// Retorna todos os registros
+                // Returns all records
                 result = obj.users;
 
-                // Se informou um id
+                // If you entered an id
             } else {
 
-                // Pesquisa o id nos registros
+                // Search the records for the id
                 obj.users.forEach((user) => {
 
                     if (user != null) {
 
-                        // Se encontrou o id, retorna o registro
+                        // If found the id, returns the record
                         if (user.id == data_id) {
                             result = user;
                         }
@@ -172,30 +139,16 @@ app.get('/api', (req, res) => {
                 });
             }
 
-            // Formata response
+            // Formats response
             var response = { status: 'success', result: result };
 
-            // Envia response
+            // Send response
             res.json(response);
         }
     });
 });
 
-// Método put()
-/*
-    Exemplo: Atualiza o registro com id = 1
-    
-        URL da Requsição: http://localhost:8888/api
-	Body da Requisição:
-	}
-            "id" : 1,
-            "name" : "Joca da Silva",
-            "email" : "joca@silva.com",
-            "avatar" : "photo.jpg",
-            "status" : 1,
-            "passwd" : "qwerty"
-	}        
-*/
+// put() method --> See "index.html" for help
 app.put('/api', (req, res) => {
     fs.readFile(database, 'utf8', (err, data) => {
         if (err) {
@@ -204,10 +157,10 @@ app.put('/api', (req, res) => {
         } else {
             var obj = JSON.parse(data);
 
-            // Data atual
+            // Current date
             var today = new Date();
 
-            // Observe que os campos correspondem ao database
+            // Note that the fields correspond to the database
             obj.users[(req.body.id - 1)].name = req.body.name;
             obj.users[(req.body.id - 1)].email = req.body.email;
             obj.users[(req.body.id - 1)].avatar = req.body.avatar;
@@ -228,12 +181,7 @@ app.put('/api', (req, res) => {
     });
 });
 
-// Método delete()
-/*
-    Exemplo: Apaga o registro com id = 1
-
-        URL da Requisição: http://localhost:8888/api?id=1
-*/
+// delete() method --> See "index.html" for help
 app.delete('/api', (req, res) => {
     fs.readFile(database, 'utf8', (err, data) => {
         if (err) {
