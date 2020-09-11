@@ -1,1 +1,133 @@
-{"users":[{"name":"Joca da Silva Souza","email":"joca@silva.com","avatar":"https://randomuser.me/api/portraits/lego/0.jpg","status":1,"passwd":"Q1w2e3r$t5","id":1,"date":"2020-05-14T17:22:10.332Z"},{"name":"Setembrino TrocaTapas","email":"set@brino.com.br","avatar":"https://randomuser.me/api/portraits/lego/1.jpg","status":1,"passwd":"Q1w2e3r$t5","id":2,"date":"2020-09-07T21:40:56.184Z"},null,null,null,{"name":"Super Mário","email":"super@mario.com","avatar":"https://randomuser.me/api/portraits/lego/4.jpg","status":1,"passwd":"Q1w2e3r$t5","id":6,"date":"2020-09-07T21:14:51.216Z"},{"name":"Cabeça de Coco","email":"cabeca@coco.com.br","avatar":"https://randomuser.me/api/portraits/lego/5.jpg","status":1,"passwd":"Q1w2e3r$t5","id":7,"date":"2020-05-14T18:09:25.638Z"},null,null,{"name":"André Luferat","email":"andre@luferat.net","avatar":"https://randomuser.me/api/portraits/lego/6.jpg","status":1,"passwd":"Q1w2e3r$t5","id":10,"date":"2020-05-14T18:09:25.638Z"},{"name":"Lucas Almeida","email":"lucas@almeida.com","avatar":"https://randomuser.me/api/portraits/lego/7.jpg","status":0,"passwd":"Q1w2e3r$t5","id":11,"date":"2020-09-04T13:52:11.256Z"},null,{"name":"Nonoca da Portela","email":"nonoca@gmail.com","avatar":"https://randomuser.me/api/portraits/lego/8.jpg","status":1,"passwd":"Q1w2e3r4t5","id":13,"date":"2020-09-06T20:04:41.479Z"},{"name":"Aristildes Descolado","email":"aristildes@hotmail.com","avatar":"https://randomuser.me/api/portraits/lego/9.jpg","status":1,"passwd":"qwertyuiop","id":14,"date":"2020-09-06T20:06:06.953Z"},{"name":"Neilsomita Malatita","email":"neil@gmail.com","avatar":"https://randomuser.me/api/portraits/lego/0.jpg","status":1,"passwd":"zxcvbnm","id":15,"date":"2020-09-06T20:09:29.102Z"},null,null,null,{"name":"Ermenisolano Cruzes","email":"emer@cruz.com","avatar":"https://randomuser.me/api/portraits/lego/4.jpg","status":1,"passwd":"asdfghjkl","id":19,"date":"2020-09-07T18:45:53.072Z"},null,null,null,{"name":"Marciano Voador","email":"marciano@fly.com","avatar":"https://randomuser.me/api/portraits/lego/2.jpg","status":1,"passwd":"dsfsdfdsf","id":23,"date":"2020-09-07T21:04:10.162Z"},{"name":"Joventino Sertanejo","email":"joven@outlook.com","avatar":"https://randomuser.me/api/portraits/lego/3.jpg","status":1,"passwd":"qwqwqwq","id":24,"date":"2020-09-07T21:06:09.613Z"},{"name":"Juma Marruá","email":"juma@marrua.com","avatar":"https://randomuser.me/api/portraits/lego/8.jpg","status":1,"passwd":"fghjklghjk","id":25,"date":"2020-09-07T21:06:42.419Z"}]}
+{
+    "users": [
+        {
+            "name": "Joca da Silva Souza",
+            "email": "joca@silva.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/0.jpg",
+            "status": 1,
+            "passwd": "Q1w2e3r$t5",
+            "id": 1,
+            "date": "2020-05-14T17:22:10.332Z"
+        },
+        {
+            "name": "Setembrino TrocaTapas",
+            "email": "set@brino.com.br",
+            "avatar": "https://randomuser.me/api/portraits/lego/1.jpg",
+            "status": 1,
+            "passwd": "Q1w2e3r$t5",
+            "id": 2,
+            "date": "2020-09-07T21:40:56.184Z"
+        },
+        null,
+        null,
+        null,
+        {
+            "name": "Super Mário",
+            "email": "super@mario.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/4.jpg",
+            "status": 1,
+            "passwd": "Q1w2e3r$t5",
+            "id": 6,
+            "date": "2020-09-07T21:14:51.216Z"
+        },
+        {
+            "name": "Cabeça de Coco",
+            "email": "cabeca@coco.com.br",
+            "avatar": "https://randomuser.me/api/portraits/lego/5.jpg",
+            "status": 1,
+            "passwd": "Q1w2e3r$t5",
+            "id": 7,
+            "date": "2020-05-14T18:09:25.638Z"
+        },
+        null,
+        null,
+        {
+            "name": "André Luferat",
+            "email": "andre@luferat.net",
+            "avatar": "https://randomuser.me/api/portraits/lego/6.jpg",
+            "status": 1,
+            "passwd": "Q1w2e3r$t5",
+            "id": 10,
+            "date": "2020-05-14T18:09:25.638Z"
+        },
+        {
+            "name": "Lucas Almeida",
+            "email": "lucas@almeida.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/7.jpg",
+            "status": 0,
+            "passwd": "Q1w2e3r$t5",
+            "id": 11,
+            "date": "2020-09-04T13:52:11.256Z"
+        },
+        null,
+        {
+            "name": "Nonoca da Portela",
+            "email": "nonoca@gmail.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/8.jpg",
+            "status": 1,
+            "passwd": "Q1w2e3r4t5",
+            "id": 13,
+            "date": "2020-09-06T20:04:41.479Z"
+        },
+        {
+            "name": "Aristildes Descolado",
+            "email": "aristildes@hotmail.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/9.jpg",
+            "status": 1,
+            "passwd": "qwertyuiop",
+            "id": 14,
+            "date": "2020-09-06T20:06:06.953Z"
+        },
+        {
+            "name": "Neilsomita Malatita",
+            "email": "neil@gmail.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/0.jpg",
+            "status": 1,
+            "passwd": "zxcvbnm",
+            "id": 15,
+            "date": "2020-09-06T20:09:29.102Z"
+        },
+        null,
+        null,
+        null,
+        {
+            "name": "Ermenisolano Cruzes",
+            "email": "emer@cruz.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/4.jpg",
+            "status": 1,
+            "passwd": "asdfghjkl",
+            "id": 19,
+            "date": "2020-09-07T18:45:53.072Z"
+        },
+        null,
+        null,
+        null,
+        {
+            "name": "Marciano Voador",
+            "email": "marciano@fly.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/2.jpg",
+            "status": 1,
+            "passwd": "dsfsdfdsf",
+            "id": 23,
+            "date": "2020-09-07T21:04:10.162Z"
+        },
+        {
+            "name": "Joventino Sertanejo",
+            "email": "joven@outlook.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/3.jpg",
+            "status": 1,
+            "passwd": "qwqwqwq",
+            "id": 24,
+            "date": "2020-09-07T21:06:09.613Z"
+        },
+        {
+            "name": "Juma Marruá",
+            "email": "juma@marrua.com",
+            "avatar": "https://randomuser.me/api/portraits/lego/8.jpg",
+            "status": 1,
+            "passwd": "fghjklghjk",
+            "id": 25,
+            "date": "2020-09-07T21:06:42.419Z"
+        }
+    ]
+}
