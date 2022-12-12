@@ -15,7 +15,7 @@
     "homepage": "https://github.com/Luferat/Node-Fake-API-REST/",
     "dependencies": {
         "body-parser": "^1.18.3",
-        "express": "^4.16.4",
+        "express": "^4.17.3",
         "fs": "0.0.1-security",
         "serve-favicon": "^2.5.0"
     },
